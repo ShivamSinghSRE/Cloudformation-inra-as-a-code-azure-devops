@@ -1,12 +1,4 @@
 jobs:
-- task: CloudFormationCreateOrUpdateStack@1
-  inputs:
-    awsCredentials: 'AWS-DEVOPS'
-    regionName: 'us-east-2'
-    stackName: 
-    templateSource: 's3'
-    s3BucketName: 'azure-devops-cloudformation'
-    s3ObjectKey: 'cloudformation.pem'
 - job: MyJob
   pool:
     vmImage: 'ubuntu-16.04'
@@ -15,8 +7,7 @@ jobs:
   workspace:
     clean: outputs
   steps:
-......
- steps:
+steps:
   - task: CloudFormationCreateOrUpdateStack@1
     inputs:
       awsCredentials: 'aws_tokens'
